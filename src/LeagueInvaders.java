@@ -1,10 +1,10 @@
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public class LeagueInvaders {
 
+	GamePanel game = new GamePanel();
 	JFrame frame = new JFrame("League Invaders");
-	//JPanel panel = new JPanel();
+	
 	public static final int HEIGHT = 800;
 	public static final int WIDTH = 500;
 	static LeagueInvaders leauge = new LeagueInvaders();
@@ -16,9 +16,10 @@ public class LeagueInvaders {
 	}
 	
 	void setup() {
-		frame.add(game);
 		
-		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+		frame.addKeyListener(game);
+		frame.add(game);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		frame.setSize(WIDTH, HEIGHT);
 		
